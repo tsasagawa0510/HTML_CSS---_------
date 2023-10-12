@@ -84,18 +84,18 @@ $(function() {
   $(window).scroll(function() {
     if($(this).scrollTop() >= 100){
       // fadeIn
-      $('#top-btn').addClass('fade-in');
-      if($('#top-btn').hasClass('fade-out')){
-        $('#top-btn').removeClass('fade-out');
-      }
-     
+      // $('#top-btn').addClass('fade-in');
+      // if($('#top-btn').hasClass('fade-out')){
+      //   $('#top-btn').removeClass('fade-out');
+      // }
+      $('#top-btn').fadeIn();
     }else{
       // fadeOut
-      $('#top-btn').addClass('fade-out');
-      if($('#top-btn').hasClass('fade-in')){
-        $('#top-btn').removeClass('fade-in');
-      }
-     
+      // $('#top-btn').addClass('fade-out');
+      // if($('#top-btn').hasClass('fade-in')){
+      //   $('#top-btn').removeClass('fade-in');
+      // }
+      $('#top-btn').fadeOut();
     }
     // console.log($(this).scrollTop());
 
@@ -150,21 +150,25 @@ $(function() {
     let src = $(this).attr('src');
     $('.moudel-img').attr('src', src);
 
-    $('.moudel').addClass('fade-in');
+    // $('.moudel').addClass('fade-in');
+    $('.moudel').fadeIn();
+    return false;
 
-    if($('.moudel').hasClass('fade-out')){
-      $('.moudel').removeClass('fade-out')
-    }
+    // if($('.moudel').hasClass('fade-out')){
+    //   $('.moudel').removeClass('fade-out')
+    // }
   });
 
   $('#btn-close').on('click',function() {
-    $('.moudel-img').attr('src', "");
+    // $('.moudel-img').attr('src', "");
    
-    $('.moudel').addClass('fade-out');
+    // $('.moudel').addClass('fade-out');
 
-    if($('.moudel').hasClass('fade-in')){
-      $('.moudel').removeClass('fade-in');
-    }
+    // if($('.moudel').hasClass('fade-in')){
+    //   $('.moudel').removeClass('fade-in');
+    // }
+    $('.moudel').fadeOut();
+    return false;
     
   });
   
