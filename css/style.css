@@ -46,7 +46,8 @@ nav a {
 /* 角丸：すべて50% */
 /* フォントの種類：Noto Sans JP、sans-serif */
 #top-btn {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
     bottom: 38px;
     right: 20px;
@@ -56,6 +57,19 @@ nav a {
     padding: 28px 24px;
     border-radius: 50%;
     font-family: "Noto Sans JP", sans-serif;
+    z-index: 1;
+}
+
+#top-btn.fade-in{
+    visibility: visible;
+    opacity: 1;
+    transition: .8s;
+}
+
+#top-btn.fade-out{
+    visibility: hidden;
+    opacity: 0;
+    transition: .8s;
 }
 
 /* 名前 */
@@ -101,12 +115,26 @@ img {
 
 /* About */
 .about {
+    visibility: hidden;
+    opacity: 0;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin: 20px auto 20px auto;
     max-width: 960px;
+}
+
+.about.fade-in {
+    visibility: visible;
+    opacity: 1;
+    transition: .8s;
+}
+
+.about.fade-Out {
+    visibility: hidden;
+    opacity: 0;
+    transition: .8s;
 }
 
 /* 丸く切り取る画像 */
@@ -127,11 +155,25 @@ img {
 
 /* Works */
 .works {
+    visibility: hidden;
+    opacity: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px auto 20px auto;
     max-width: 960px;
+}
+
+.works.fade-in{
+    visibility: visible;
+    opacity: 1;
+    transition: .8s;
+}
+
+.works.fade-Out{
+    visibility: hidden;
+    opacity: 0;
+    transition: .8s;
 }
 
 /* Worksの画像と説明部分 */
@@ -152,13 +194,67 @@ footer p {
     padding-bottom: 20px;
     font-family: "Noto Sans JP", sans-serif;
 }
-
-.fade-in {
-    opacity: 0;
-}
-.fade-in.active {
-    transition: .8s;
+/* 
+.fade-in{
+    visibility: visible;
     opacity: 1;
+    transition: .8s;
+}
+
+.fade-Out {
+    visibility: hidden;
+    opacity: 0;
+    transition: .8s;
+} */
+
+
+.moudel {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.moudel-img{
+    position: absolute;
+    width: 80%;
+    max-width: 800px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.moudel.fade-in{
+    visibility: visible;
+    opacity: 1;
+    transition: .8s;
+}
+
+.moudel.fade-Out{
+    visibility: hidden;
+    opacity: 0;
+    transition: .8s;
+}
+
+#btn-close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 40px;
+    border-style: none;
+    background-color: transparent;
+}
+
+.item-img {
+    cursor: pointer;
 }
 
 

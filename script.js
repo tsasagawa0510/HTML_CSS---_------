@@ -16,44 +16,86 @@ $(function() {
   // ホバー時のイベント処理にはどのjQueryメソッドを使えばよいか
   // アニメーションさせるにはどのjQueryメソッドを使えばよいか
   // 不透明度はどのCSSプロパティで設定するか
-  $('.home').on('mouseover', function() {
+  // $('.home').on('mouseover', function() {
+  //   $(this).animate({
+  //     opacity: 0.5}, 200);
+  // });
+  // // マウスアウトしたときに透明度を戻す
+  // $('.home').on('mouseout', function() {
+  //   $(this).animate({
+  //     opacity: 1}, 200);
+  // });
+
+  // $('.menu a').on('mouseover', function() {
+  //   $(this).animate({
+  //     opacity: 0.5}, 200);
+  // });
+  // // マウスアウトしたときに透明度を戻す
+  // $('.menu a').on('mouseout', function() {
+  //   $(this).animate({
+  //     opacity: 1}, 200);
+  // });
+
+  // $('#top-btn').on('mouseover', function() {
+  //   $(this).animate({
+  //     opacity: 0.5}, 200);
+  // });
+  // // マウスアウトしたときに透明度を戻す
+  // $('#top-btn').on('mouseout', function() {
+  //   $(this).animate({
+  //     opacity: 1}, 200);
+  // });
+
+  // $('.item-img').on('mouseover', function() {
+  //   $(this).animate({
+  //     opacity: 0.5}, 200);
+  // });
+  // // マウスアウトしたときに透明度を戻す
+  // $('.item-img').on('mouseout', function() {
+  //   $(this).animate({
+  //     opacity: 1}, 200);
+  // });
+
+  // $('#btn-close').on('mouseover', function() {
+  //   $(this).animate({
+  //     opacity: 0.5}, 200);
+  // });
+  // // マウスアウトしたときに透明度を戻す
+  // $('#btn-close').on('mouseout', function() {
+  //   $(this).animate({
+  //     opacity: 1}, 200);
+  // });
+
+
+  //マウスホバーしたときに透明度の設定 
+  $('.hoverIn').on('mouseover', function() {
     $(this).animate({
       opacity: 0.5}, 200);
   });
   // マウスアウトしたときに透明度を戻す
-  $('.home').on('mouseout', function() {
+  $('.hoverOut').on('mouseout', function() {
     $(this).animate({
       opacity: 1}, 200);
   });
 
-  $('.menu a').on('mouseover', function() {
-    $(this).animate({
-      opacity: 0.5}, 200);
-  });
-  // マウスアウトしたときに透明度を戻す
-  $('.menu a').on('mouseout', function() {
-    $(this).animate({
-      opacity: 1}, 200);
-  });
 
-  $('#top-btn').on('mouseover', function() {
-    $(this).animate({
-      opacity: 0.5}, 200);
-  });
-  // マウスアウトしたときに透明度を戻す
-  $('#top-btn').on('mouseout', function() {
-    $(this).animate({
-      opacity: 1}, 200);
-  });
 
   // 100px下へスクローしたらTOPボタンを表示、表示にする
   $(window).scroll(function() {
     if($(this).scrollTop() >= 100){
       // fadeIn
-      $('#top-btn').css('display', 'block');
-    }else {
+      $('#top-btn').addClass('fade-in');
+      if($('#top-btn').hasClass('fade-out')){
+        $('#top-btn').removeClass('fade-out');
+      }
+     
+    }else{
       // fadeOut
-      $('#top-btn').css('display', 'none');
+      $('#top-btn').addClass('fade-out');
+      if($('#top-btn').hasClass('fade-in')){
+        $('#top-btn').removeClass('fade-in');
+      }
+     
     }
     // console.log($(this).scrollTop());
 
@@ -72,11 +114,11 @@ $(function() {
     const margin = 100;
 
     if(scroll > aboutTop - windowHeight + margin){
-      $('.about').addClass('active');
+      $('.about').addClass('fade-in');
     }
 
     if(scroll > worksTop - windowHeight + margin){
-      $('.works').addClass('active');
+      $('.works').addClass('fade-in');
     }
     
   });
@@ -99,6 +141,33 @@ $(function() {
     }, 500, 'swing');
     return false;
   });
+
+  // Worksの画像をクリックしたときにモーダルで拡大表示する
+  // attr()メソッドを使い、クリックされた画像のsrc属性の値を取得する
+  // attr()メソッドを使い、モーダルの画像部分（img要素）のsrc属性に取得した値を追加する
+  $('.item-img').on('click', function() {
+
+    let src = $(this).attr('src');
+    $('.moudel-img').attr('src', src);
+
+    $('.moudel').addClass('fade-in');
+
+    if($('.moudel').hasClass('fade-out')){
+      $('.moudel').removeClass('fade-out')
+    }
+  });
+
+  $('#btn-close').on('click',function() {
+    $('.moudel-img').attr('src', "");
+   
+    $('.moudel').addClass('fade-out');
+
+    if($('.moudel').hasClass('fade-in')){
+      $('.moudel').removeClass('fade-in');
+    }
+    
+  });
+  
 
   
 });
