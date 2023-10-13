@@ -154,6 +154,7 @@ $(function() {
   // Worksの画像をクリックしたときにモーダルで拡大表示する
   // attr()メソッドを使い、クリックされた画像のsrc属性の値を取得する
   // attr()メソッドを使い、モーダルの画像部分（img要素）のsrc属性に取得した値を追加する
+  
   $('.item-img').on('click', function() {
 
     let src = $(this).attr('src');
