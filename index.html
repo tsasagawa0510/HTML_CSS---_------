@@ -33,11 +33,14 @@
       </div>
     </nav>
 
+    <!-- TOPに戻るボタン -->
+    <!-- 後からJQUERYで実装する場合の記述場所はどこがいいのか？ -->
     <a href="#" id="top-btn" class="hoverIn hoverOut">TOP</a>
   </header>
   <main>
     <article>
       <!-- メイン画像 -->
+      <!-- ul liで実装 -->
       <div class="carousel">
         <div>
           <img src="image/main.png" alt="CanonのCamera" class="mainpic">
@@ -72,6 +75,7 @@
       <h1 id="works">Works</h1>
       <section class="works">
         <div class="item">
+          <!-- <a href=""><img src="image/works1.png" alt="日本海"></a> -->
           <img class="item-img hoverIn hoverOut" src="image/works1.png" alt="日本海">
           <p>新潟に訪れた際に、日本海の雄大さを魅了されて撮影した1枚</p>
         </div>
@@ -97,7 +101,7 @@
   <!-- Works用のモーダル -->
   <div class="moudel">
     <img class="moudel-img" src="" alt="">
-    <button id="btn-close" class="hoverIn hoverOut">×</button>
+    <button id="btn-close" class="hoverIn hoverOut">✖</button>
   </div>
 
   <!-- JQueryの読み込み -->

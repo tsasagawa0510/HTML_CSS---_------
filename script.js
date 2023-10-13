@@ -78,6 +78,15 @@ $(function() {
       opacity: 1}, 200);
   });
 
+  // リンクのホバー時に不透明度をアニメーションで変更する
+  // $('a').hover(
+  // function () {
+  //   $(this).animate({ 'opacity': 0.6 }, 300);
+  // },
+  // function () {
+  //   $(this).animate({ 'opacity': 1.0 }, 300);
+  // });
+
 
 
   // 100px下へスクローしたらTOPボタンを表示、表示にする
@@ -172,6 +181,39 @@ $(function() {
     
   });
   
-
-  
 });
+
+
+// Question
+
+// $('section').each(function ()
+// 解説とeach()メソッド
+
+// $('.box').fadeIn();
+// $('.box').fadeOut();
+// 内部でdisplay:block?visi
+
+// 
+// ページ内リンクのスクロールをなめらかにする（スムーズスクロール）解説
+// $('a[href^="#"]').click(function () {
+//   const speed = 500;
+//   const href = $(this).attr('href');
+//   let $target;
+//   if (href == '#') {
+//     $target = $('html');
+//   }
+//   else {
+//     $target = $(href);
+//   }
+//   const position = $target.offset().top;
+//   $('html, body').animate({ 'scrollTop': position }, speed, 'swing');
+//   return false;
+// });
+
+
+// Worksの画像をクリックしたときにモーダルで拡大表示する
+// return false;
+// 必要？ 
+// イベントの伝播（でんぱん）
+
+// button OR a
